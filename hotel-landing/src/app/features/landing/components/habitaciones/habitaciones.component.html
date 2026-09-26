@@ -1,0 +1,24 @@
+<section id="habitaciones" class="habitaciones-section">
+  <div class="section-header">
+    <p class="eyebrow">Nuestras habitaciones</p>
+    <h2>Encuentra el espacio perfecto para tu escapada.</h2>
+  </div>
+
+  <div class="habitaciones-grid">
+    @for (habitacion of habitaciones; track habitacion.id) {
+      <article class="habitacion-card">
+        <img [src]="habitacion.imagen" [alt]="habitacion.nombre" />
+
+        <div class="card-content">
+          <div class="card-topline">
+            <h3>{{ habitacion.nombre }}</h3>
+            <span>${{ habitacion.precio }}/noche</span>
+          </div>
+
+          <p>{{ habitacion.descripcion }}</p>
+          <button type="button">Reservar</button>
+        </div>
+      </article>
+    }
+  </div>
+</section>
